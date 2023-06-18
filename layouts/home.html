@@ -1,0 +1,260 @@
+{{ define "main" }}
+<main class="home">
+    <div class="l-full">
+
+        <div class="l-content ">
+
+            <article class="post-type-profile" id="article">
+
+                <div class="profile-header">
+                    <div class="_colA">
+                        <img src="https://business.uic.edu/wp-content/uploads/sites/91/2018/02/WestlandChris_2018-157x180.jpg"
+                            alt="Photo of Westland, James Christopher">
+                    </div>
+
+                    <div class="_colB">
+
+                        {{ with .Params.header }}
+                            <h1>{{ .name }}</h1>
+
+                            <p class="_academic-title">{{ .title }}</p>
+
+                            <p class="_alternate-title">{{ .alternative_title }}</p>
+
+                            <p class="_department">{{ .department }}</p>
+
+                            <p class="_pronouns">{{ .pronouns }}</p>
+                        {{end}}
+
+                    </div>
+                </div>
+
+                <div class="profile-body">
+                    <div class="_colA">
+                    </div>
+
+                    <div class="_colB">
+                        <div class="contact-wrapper">
+
+                            <section class="u-definition-list-primary-contact">
+
+                                {{ with .Params.contact }}
+
+                                    <div class="_row -inline">
+                                        <h2 class="_section-title">Contact</h2>
+                                    </div>
+                                    
+                                    {{range .list }}
+                                        
+                                        <div class="_row -inline">
+                                            <h2 class="_label">{{ .label }}</h2>
+                                            <p class="_content">
+                                                {{ if .link }} <a href="{{ .link | safeURL }}"> {{ end }}
+
+                                                    {{ .content }}
+                                            
+                                                {{ if .link }} </a> {{ end }}
+                                            </p>
+                                        </div>
+
+                                    {{end}}
+
+                                    {{ if .personal_website_label }}
+                                        <div class="_row">
+                                            <h2 class="_label">Related Sites:</h2>
+                                            <div class="_content u-rich-text">
+                                                <ul class="list--inset list--external">
+                                                    <li><a href="{{ .personal_website_link }}" target="_blank"
+                                                            rel="noopener">{{ .personal_website_label }}</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    {{end}}
+
+                                {{end}}
+
+                            </section>
+
+                            <section class="u-definition-list-secondary-contact">
+                                <div class="components">
+                                </div>
+                            </section>
+
+                        </div>
+
+                        <div class="components">
+                        </div>
+
+                        <section class="body_content">
+
+                            {{ .Content }}
+
+                            <!-- <h2 class="_section-title">About</h2>
+                            <div class="u-rich-text">
+                                <p>I am currently Professor in the Department of Information &amp; Decision Sciences at
+                                    the University of Illinois Chicago. I have a BA in Statistics and an MBA in
+                                    Accounting from Indiana University and received my PhD in Computers and Information
+                                    Systems from the University of Michigan. I have professional experience in the US as
+                                    a certified public accountant and as a consultant in technology law in the US,
+                                    Europe, Latin America and Asia. I am the author of numerous academic papers and of
+                                    nine books: <em>Audit Analytics</em> (Springer 2020), <em>Structural Equation
+                                        Modeling</em> (2nd ed. Springer 2019); <em>Global Electronic Commerce</em> (MIT
+                                    Press 2000); <em>Global Innovation Management</em> (Palgrave Macmillan 2nd ed 2017);
+                                    <em>Red Wired: China’s Internet Revolution</em> (Marshall Cavendish, 2010);
+                                    <em>Structural Equation Modeling</em> (Springer 2015); <em>Financial Dynamics</em>
+                                    (Wiley 2003); <em>Valuing Technology</em> (Wiley 2002) and <em>Statistical Auditing
+                                        with R</em> (forthcoming 2018). I am the Editor-in-Chief of <em>Electronic
+                                        Commerce Research</em> (Springer) and have served on editorial boards of several
+                                    other information technology journals including <em>Management Science</em>,
+                                    <em>ISR</em>, <em>ECRA</em>, <em>IJEC</em>, and others. I have served on the
+                                    faculties at the University of Michigan, University of Southern California, Hong
+                                    Kong University of Science and Technology, Tsinghua University, University of
+                                    Science and Technology of China, Harbin Institute of Technology and other academic
+                                    institutions. In 2012 I received High-Level Foreign Expert status in China under the
+                                    1000-Talents Plan and am currently Overseas Chair Professor at Beihang University. I
+                                    have advised on patent, valuation and technology strategy for numerous technology
+                                    firms.
+                                </p>
+
+                            </div> -->
+                        </section>
+
+
+                        <section>
+                            <!-- <h2 class="_section-title">Selected Grants</h2>
+                            <div>
+                                <p>U.S. Department of State, Fulbright Specialist Roster, Appointed</p>
+                            </div> -->
+                        </section>
+
+                        <!-- <section>
+                            <h2 class="_section-title">Selected Publications</h2>
+                            <div class="u-rich-text">
+                                <p><strong>Books:</strong></p>
+                                <p><em>Audit Analytics: Data Science for the Accounting Profession</em> (book) (in R.
+                                    Genleman, et al. “Use R!” series), Springer 2020</p>
+                                <p><em>Structural Equation Modeling: from paths to networks</em> (book), Springer, 2nd
+                                    edition (2019); reviewed in Sarstedt, Marko, and Christian M. Ringle. “Structural
+                                    Equation Models” Psychometrika (2020): 1-4. <a
+                                        href="https://doi.org/10.1007/s11336-020-09719-0" target="_blank"
+                                        rel="noopener">https://doi.org/10.1007/s11336-020-09719-0</a></p>
+                                <p><em>Global Innovation Management: A Strategic Approach</em>&nbsp;(book) (2nd ed.)
+                                    London: Palgrave / Macmillan 2018.</p>
+                                <p><strong>Papers:</strong></p>
+                                <p>“Determinants of Liquidity in Cryptocurrency Markets”, <em>Digital Finance</em>,
+                                    forthcoming</p>
+                                <p>“Information loss and bias in Likert survey responses,” <em>Plos one</em>, DOI:
+                                    10.1371/journal.pone.0271949, July 2022</p>
+                                <p>“A Comparative Study of Frequentist vs. Bayesian A/B Testing in the Detection of
+                                    E-Commerce Fraud,” <em>Journal of Electronic Business &amp; Digital Economics</em>,
+                                    October 2022</p>
+                                <p>“Trade informativeness and liquidity in Bitcoin markets,” <em>Plos one</em>, 16(8),
+                                    e0255515. (2021)</p>
+                                <p>“Assessing Privacy and Security of Information Systems from Audit Data,”
+                                    <em>Information Systems Frontiers</em>, 1-18. (2021)
+                                </p>
+                                <p>“20 years of Electronic Commerce Research,” <em>Electronic Commerce Research</em>,
+                                    21(1), 1-40. (2021) (w/ Kumar, S., Lim, W. M., Pandey, N.)</p>
+                                <p>“When all Products are Digital: Complexity and Intangible Value in the Ecosystem of
+                                    Digitizing Firms,” <em>Information </em><em>Systems Research</em> (forthcoming 2021)
+                                    (w/ Pouya Rahmati, Ali Tafti and Cesar Hidalgo)</p>
+                                <p>“Understanding Characteristics of Popular Streamers on Live Streaming Platforms:
+                                    Evidence from Twitch.tv,” <em>Journal of the AIS</em>, forthcoming 2020 (with K.
+                                    Zhao, Y. Hu)</p>
+                                <p>“Microlending on mobile social credit platforms: an exploratory study using
+                                    Philippine loan contracts,” <em>Electronic Commerce Research</em>, 20(1), 173-196.
+                                    (2020). (w/ Mou, J., Phan, T. Q., &amp; Tan, T.)</p>
+                                <p>“Predicting credit card fraud with Sarbanes-Oxley Assessments and Fama-French Risk
+                                    Factors,” <em>Intelligent Systems in </em><em>Accounting, Finance and
+                                        Management</em>, 27(2), 95-107. (2020)</p>
+                                <p>“The information content of Sarbanes-Oxley in predicting security breaches,”
+                                    <em>Computers &amp; Security</em>. 2020 Mar 1;90:101687
+                                </p>
+                                <p>“Demand cycles and market segmentation in bicycle sharing,” <em>Information
+                                        Processing &amp; Management</em> 56.4 (2019): 1592-1604 (with Jian Mou, and
+                                    Dafei Yin)</p>
+                                <p>“A two-sided matching model in the context of B2B export cross-border e-commerce,”
+                                    <em>Electronic Commerce Research</em> 19.4 (2019): 841-861 (with Miao, Yumeng, et
+                                    al.)
+                                </p>
+                                <p>“Microlending on mobile social credit platforms: an exploratory study using
+                                    Philippine loan contracts,” <em>Electronic Commerce Research</em> (2019): 1-24 (with
+                                    Mou, Jian, et al.)</p>
+                                <p>“Convolutional Neural Network Deep-Learning Models for Prediction of Shared Bicycle
+                                    Demand,” International Conference on Applications and Techniques in Cyber Security
+                                    and Intelligence. Springer, Cham, 2018 (with Jian Mou, and Dafei Yin)</p>
+                                <p>“Methods to assess the value of new technologies: The case of consumer sentiment
+                                    towards digital wallet technology,” <em>Data-Enabled Discovery and Applications</em>
+                                    1.1 (2017): 2</p>
+                                <p>“An empirical investigation of analytical procedures using mixture distributions,” J
+                                    Christopher Westland – <em>Intelligent Systems in Accounting and Auditing</em>, 2017
+                                </p>
+                                <p>“Substitutes, complements and network effects in instant messaging services,” (JC
+                                    Westland, JX Hao, X Xiao, S Shan), <em>Networks and Spatial Economics</em> 16.2
+                                    (2016): 525-543</p>
+
+                            </div>
+                        </section> -->
+
+
+
+                        <!-- <section>
+                            <h2 class="_section-title">Professional Leadership</h2>
+                            <div>
+                                <p>Editor-in-Chief, Electronic Commerce Research (2013-present), Impact factor: 3.9;
+                                    acceptance rate: 14%; articles/yr: ~140; downloads: ~250K/yr</p>
+                                <p>Scientific Reports (Nature) Associate Editor, Scientific Reports is the 5th
+                                    most-cited journal in the world, with more than 696,000 citations in 2021 and an
+                                    Impact Factor of 5.2</p>
+                            </div>
+                        </section>
+
+                        <section>
+                            <h2 class="_section-title">Notable Honors</h2>
+                            <div>
+                                <p>2012 - 2015, High-Level Foreign Expert status in China, 1000-Talents Plan</p>
+                            </div>
+                        </section>
+
+                        <section>
+                            <h2 class="_section-title">Education</h2>
+                            <div class="u-rich-text">
+                                <p>PhD, Computers &amp; Information Systems, University of Michigan, 1987<br>
+                                    MBA, Accounting, Indiana University, 1973<br>
+                                    BA, Mathematics (Physics &amp; Chemistry minors), Indiana University, 1971<br>
+                                    Languages: English, Mandarin Chinese</p>
+
+                            </div>
+                        </section>
+
+                        <section>
+                            <h2 class="_section-title">Licensures and Certifications</h2>
+                            <div class="u-rich-text">
+                                <ul>
+                                    <li>Appointment to the Fulbright Specialist Roster by the U.S. Department of State
+                                    </li>
+                                    <li>Certified Public Accountant (Illinois License 065.035982)</li>
+                                    <li>Beta Gamma Sigma (Business Honorary Society)</li>
+                                    <li>Mensa International; American Mensa</li>
+                                </ul>
+
+                            </div>
+                        </section>
+
+                        <section>
+                            <h2 class="_section-title">Professional Memberships</h2>
+                            <div class="u-rich-text">
+                                <p>Certified Public Accountant (Illinois License 065.035982)</p>
+
+                            </div>
+                        </section> -->
+                    </div>
+                </div>
+
+            </article>
+        </div>
+
+    </div>
+
+</main>
+{{ end }}

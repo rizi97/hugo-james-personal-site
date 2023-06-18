@@ -1,0 +1,10 @@
+name = "Notrack"
+license = "GPLv3"
+description = "A libre hugo personal webpage theme without reliance on third parties and no tracking."
+tags = ["minimal", "personal", "responsive", "libre", "flexbox"]
+features = ["gallery", "blog", "resume", "drop-down menu"]
+min_version = "0.70.0"
+
+[author]
+  name = "Muhamamd Rizwan Aslam"
+  homepage = "https://github.com/rizi97/"

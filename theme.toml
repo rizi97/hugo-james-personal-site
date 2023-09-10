@@ -6,5 +6,5 @@ features = ["gallery", "blog", "resume", "drop-down menu"]
 min_version = "0.70.0"
 
 [author]
-  name = "M. Rizwan Aslam"
+  name = "Muhamamd Rizwan Aslam"
   homepage = "https://github.com/rizi97/"

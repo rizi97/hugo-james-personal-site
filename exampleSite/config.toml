@@ -1,6 +1,6 @@
 baseURL = "/"
 languageCode = "en-us"
-title = "Personal Site test"
+title = "Personal Site"
 theme = "notrack"
 newContentEditor = "nvim"
 mainSections = ["blog"]
